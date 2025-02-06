@@ -1,0 +1,37 @@
+run-code.yml
+
+name: Run C# Code
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up .NET (C#)
+        uses: actions/setup-dotnet@v2
+        with:
+          dotnet-version: '6.0'  # ou a versão que você está utilizando
+
+      - name: Restore dependencies
+        run: |
+          dotnet restore
+
+      - name: Build
+        run: |
+          dotnet build
+
+      - name: Run tests (se você tiver testes)
+        run: |
+          dotnet test
+
+      - name: Run application
+        run: |
+          dotnet run
