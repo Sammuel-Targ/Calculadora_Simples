@@ -1,3 +1,3 @@
 # Calculadora_Simples
 
-Uma calculadora simples feita em c#, como um programador iniciante.
+Uma calculadora simples feita em c#.
